@@ -3,7 +3,7 @@ import { CatchWrapper } from "../utills/CatchWrapper";
 import { NextFunction, Request, Response } from "express";
 
 
-const validateRequest = (schema: AnyZodObject) => {
+const validationRequest = (schema: AnyZodObject) => {
     return CatchWrapper(
         async (req: Request, res: Response, next: NextFunction) => {
             await schema.parseAsync({
@@ -15,4 +15,4 @@ const validateRequest = (schema: AnyZodObject) => {
     )
 }
 
-export default validateRequest
+export default validationRequest
