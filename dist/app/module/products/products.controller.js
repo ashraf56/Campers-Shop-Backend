@@ -25,6 +25,14 @@ const createProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) => _
         data: result
     });
 }));
+const getAllProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield products_service_1.ProductServices.getAllProductfromDB();
+    res.status(http_status_1.default.OK).json({
+        success: true,
+        message: "Products retrieve successfully",
+        data: result
+    });
+}));
 exports.ProductCOntroller = {
-    createProductController
+    createProductController, getAllProductController
 };

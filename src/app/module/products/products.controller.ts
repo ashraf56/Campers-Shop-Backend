@@ -16,11 +16,23 @@ const createProductController = CatchWrapper(
         })
     }
 )
+const getAllProductController = CatchWrapper(
+    async (req, res) => {
+
+        const result = await ProductServices.getAllProductfromDB()
+
+        res.status(httpStatus.OK).json({
+            success: true,
+            message: "Products retrieve successfully",
+            data:result
+        })
+    }
+)
 
 
 
 
 
 export const ProductCOntroller = {
-    createProductController
+    createProductController, getAllProductController
 }
