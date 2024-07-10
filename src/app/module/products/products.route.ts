@@ -9,7 +9,7 @@ const router = Router();
 
 router.post('/create-product', validationRequest(ProductValidation.createProductValidation), ProductCOntroller.createProductController)
 
-router.post('/',  ProductCOntroller.getAllProductController)
+router.get('/',  ProductCOntroller.getAllProductController)
 
 
 
