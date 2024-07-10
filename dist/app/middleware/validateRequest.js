@@ -9,9 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const tryCatchWrapper_1 = require("../utills/tryCatchWrapper");
+const CatchWrapper_1 = require("../utills/CatchWrapper");
 const validateRequest = (schema) => {
-    return (0, tryCatchWrapper_1.tryCatchWrapper)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    return (0, CatchWrapper_1.CatchWrapper)((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         yield schema.parseAsync({
             body: req.body
         });
