@@ -27,6 +27,10 @@ const getAllProductfromDB = () => __awaiter(void 0, void 0, void 0, function* ()
     const res = yield products_model_1.default.find();
     return res;
 });
+const DeleteProductfromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield products_model_1.default.findByIdAndDelete(id);
+    return res;
+});
 exports.ProductServices = {
-    createProductDB, getAllProductfromDB
+    createProductDB, getAllProductfromDB, DeleteProductfromDB
 };

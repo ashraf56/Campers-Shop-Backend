@@ -21,10 +21,17 @@ const getAllProductfromDB = async () => {
 
 
 }
+const DeleteProductfromDB = async (id:string) => {
+
+    const res = await Products.findByIdAndDelete(id)
+    return res
+
+
+}
 
 
 
 
 export const ProductServices = {
-    createProductDB, getAllProductfromDB
+    createProductDB, getAllProductfromDB,DeleteProductfromDB
 }

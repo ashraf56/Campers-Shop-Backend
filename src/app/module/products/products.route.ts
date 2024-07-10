@@ -10,6 +10,7 @@ const router = Router();
 router.post('/create-product', validationRequest(ProductValidation.createProductValidation), ProductCOntroller.createProductController)
 
 router.get('/',  ProductCOntroller.getAllProductController)
+router.delete('/:id',  ProductCOntroller.DeleteSingleProductController)
 
 
 

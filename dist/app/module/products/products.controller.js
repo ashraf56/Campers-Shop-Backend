@@ -33,6 +33,15 @@ const getAllProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) => _
         data: result
     });
 }));
+const DeleteSingleProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const result = yield products_service_1.ProductServices.DeleteProductfromDB(id);
+    res.status(http_status_1.default.OK).json({
+        success: true,
+        message: "Product deleted successfully",
+        data: result
+    });
+}));
 exports.ProductCOntroller = {
-    createProductController, getAllProductController
+    createProductController, getAllProductController, DeleteSingleProductController
 };
