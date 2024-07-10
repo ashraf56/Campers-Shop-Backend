@@ -1,10 +1,11 @@
+import { ProductInterface } from "./products.interface"
 import Products from "./products.model"
 
 
 
-const createProductDB = async()=>{
+const createProductDB = async(payload:ProductInterface)=>{
 
-const res = await Products.create()
+const res = await Products.create(payload)
 return res
 
 

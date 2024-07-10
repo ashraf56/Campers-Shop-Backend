@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductServices = void 0;
 const products_model_1 = __importDefault(require("./products.model"));
-const createProductDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield products_model_1.default.create();
+const createProductDB = (payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield products_model_1.default.create(payload);
     return res;
 });
 exports.ProductServices = {
