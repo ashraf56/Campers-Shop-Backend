@@ -2,8 +2,8 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors'
 import router from './app/mainRoute/routes';
-import noRoutefound from './app/middleware/notfound';
 import globalErrorhandler from './app/middleware/globalErrorhandler';
+import noRoutefound from './app/middleware/notfoundroute';
 
 const app = express()
 

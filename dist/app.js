@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = __importDefault(require("./app/mainRoute/routes"));
-const notfound_1 = __importDefault(require("./app/middleware/notfound"));
 const globalErrorhandler_1 = __importDefault(require("./app/middleware/globalErrorhandler"));
+const notfoundroute_1 = __importDefault(require("./app/middleware/notfoundroute"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -16,5 +16,5 @@ app.get('/', (req, res) => {
     res.send('Camper shop running..!');
 });
 app.use(globalErrorhandler_1.default);
-app.use(notfound_1.default);
+app.use(notfoundroute_1.default);
 exports.default = app;
