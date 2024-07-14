@@ -27,10 +27,15 @@ const getAllProductfromDB = () => __awaiter(void 0, void 0, void 0, function* ()
     const res = yield products_model_1.default.find();
     return res;
 });
+const getSIngleProductfromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield products_model_1.default.findById(id);
+    return res;
+});
 const DeleteProductfromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const res = yield products_model_1.default.findByIdAndDelete(id);
     return res;
 });
 exports.ProductServices = {
-    createProductDB, getAllProductfromDB, DeleteProductfromDB
+    createProductDB, getAllProductfromDB, DeleteProductfromDB,
+    getSIngleProductfromDB
 };

@@ -12,4 +12,5 @@ const router = (0, express_1.Router)();
 router.post('/create-product', (0, validationRequest_1.default)(products_validation_1.ProductValidation.createProductValidation), products_controller_1.ProductCOntroller.createProductController);
 router.get('/', products_controller_1.ProductCOntroller.getAllProductController);
 router.delete('/:id', products_controller_1.ProductCOntroller.DeleteSingleProductController);
+router.get('/:id', products_controller_1.ProductCOntroller.getSingleProductController);
 exports.ProductRouter = router;

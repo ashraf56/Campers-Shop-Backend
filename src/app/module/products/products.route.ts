@@ -11,6 +11,7 @@ router.post('/create-product', validationRequest(ProductValidation.createProduct
 
 router.get('/',  ProductCOntroller.getAllProductController)
 router.delete('/:id',  ProductCOntroller.DeleteSingleProductController)
+router.get('/:id',  ProductCOntroller.getSingleProductController)
 
 
 

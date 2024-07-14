@@ -40,11 +40,23 @@ const DeleteSingleProductController = CatchWrapper(
         })
     }
 )
+const getSingleProductController = CatchWrapper(
+    async (req, res) => {
+    const {id} = req.params 
+        const result = await ProductServices.getSIngleProductfromDB(id)
+
+        res.status(httpStatus.OK).json({
+            success: true,
+            message: "Product deleted successfully",
+            data:result
+        })
+    }
+)
 
 
 
 
 
 export const ProductCOntroller = {
-    createProductController, getAllProductController, DeleteSingleProductController
+    createProductController, getAllProductController, DeleteSingleProductController,getSingleProductController
 }
