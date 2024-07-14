@@ -52,11 +52,25 @@ const getSingleProductController = CatchWrapper(
         })
     }
 )
+const updateProductController = CatchWrapper(
+    async (req, res) => {
+    const {id} = req.params 
+    const payload =req.body
+        const result = await ProductServices.UpdateProductfromDB(id,payload)
+
+        res.status(httpStatus.OK).json({
+            success: true,
+            message: "Single Product updated successfully",
+            data:result
+        })
+    }
+)
 
 
 
 
 
 export const ProductCOntroller = {
-    createProductController, getAllProductController, DeleteSingleProductController,getSingleProductController
+    createProductController, getAllProductController, DeleteSingleProductController,
+    getSingleProductController,updateProductController
 }

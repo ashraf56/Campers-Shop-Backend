@@ -13,4 +13,5 @@ router.post('/create-product', (0, validationRequest_1.default)(products_validat
 router.get('/', products_controller_1.ProductCOntroller.getAllProductController);
 router.delete('/:id', products_controller_1.ProductCOntroller.DeleteSingleProductController);
 router.get('/:id', products_controller_1.ProductCOntroller.getSingleProductController);
+router.put('/:id', products_controller_1.ProductCOntroller.updateProductController);
 exports.ProductRouter = router;

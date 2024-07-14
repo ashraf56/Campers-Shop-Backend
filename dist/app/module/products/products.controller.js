@@ -51,6 +51,17 @@ const getSingleProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) =
         data: result
     });
 }));
+const updateProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { id } = req.params;
+    const payload = req.body;
+    const result = yield products_service_1.ProductServices.UpdateProductfromDB(id, payload);
+    res.status(http_status_1.default.OK).json({
+        success: true,
+        message: "Single Product updated successfully",
+        data: result
+    });
+}));
 exports.ProductCOntroller = {
-    createProductController, getAllProductController, DeleteSingleProductController, getSingleProductController
+    createProductController, getAllProductController, DeleteSingleProductController,
+    getSingleProductController, updateProductController
 };

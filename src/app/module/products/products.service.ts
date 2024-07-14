@@ -35,11 +35,29 @@ const DeleteProductfromDB = async (id:string) => {
 
 
 }
+const UpdateProductfromDB = async (id:string,payload:ProductInterface) => {
+const query = {
+    $set:{
+        name:payload.name,
+        description:payload.description,
+        price:payload.price,
+        rating:payload.rating,
+        stockQuantity:payload.stockQuantity,
+        category:payload.category,
+      image:payload.image
+}
+}
+    const res = await Products.findByIdAndUpdate({_id:id},query,{new:true})
+    return res
+
+
+}
+
 
 
 
 
 export const ProductServices = {
     createProductDB, getAllProductfromDB,DeleteProductfromDB,
-    getSIngleProductfromDB
+    getSIngleProductfromDB,UpdateProductfromDB
 }

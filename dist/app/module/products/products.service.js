@@ -35,7 +35,22 @@ const DeleteProductfromDB = (id) => __awaiter(void 0, void 0, void 0, function* 
     const res = yield products_model_1.default.findByIdAndDelete(id);
     return res;
 });
+const UpdateProductfromDB = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const query = {
+        $set: {
+            name: payload.name,
+            description: payload.description,
+            price: payload.price,
+            rating: payload.rating,
+            stockQuantity: payload.stockQuantity,
+            category: payload.category,
+            image: payload.image
+        }
+    };
+    const res = yield products_model_1.default.findByIdAndUpdate({ _id: id }, query, { new: true });
+    return res;
+});
 exports.ProductServices = {
     createProductDB, getAllProductfromDB, DeleteProductfromDB,
-    getSIngleProductfromDB
+    getSIngleProductfromDB, UpdateProductfromDB
 };
