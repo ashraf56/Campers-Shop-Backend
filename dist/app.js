@@ -9,7 +9,7 @@ const routes_1 = __importDefault(require("./app/mainRoute/routes"));
 const globalErrorhandler_1 = __importDefault(require("./app/middleware/globalErrorhandler"));
 const notfoundroute_1 = __importDefault(require("./app/middleware/notfoundroute"));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({ origin: 'http://localhost:5173' }));
 app.use(express_1.default.json());
 app.use('/api', routes_1.default);
 app.get('/', (req, res) => {

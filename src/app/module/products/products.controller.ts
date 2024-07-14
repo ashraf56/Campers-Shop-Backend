@@ -47,7 +47,7 @@ const getSingleProductController = CatchWrapper(
 
         res.status(httpStatus.OK).json({
             success: true,
-            message: "Product deleted successfully",
+            message: "Single Product retrieve successfully",
             data:result
         })
     }

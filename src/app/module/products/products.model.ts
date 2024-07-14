@@ -6,9 +6,10 @@ const ProductSchema = new Schema<ProductInterface>({
     name: { type: String, required: true },
     description: { type: String, required: true },
     price: { type: Number, required: true },
-    rating: { type: Number, required: true, default: 0 },
+    rating: { type: String, required: true },
     stockQuantity: { type: Number, required: true, default: 0 },
-    image: { type: String }
+    image: { type: String },
+    category:{type:String}
 })
 
 

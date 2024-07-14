@@ -8,9 +8,10 @@ const createProductValidation = z.object({
         name:z.string(),
         description:z.string(),
         price:z.number(),
-        rating:z.number().default(0),
+        rating:z.string(),
         stockQuantity: z.number().default(0),
-        image: z.string().optional()
+        image: z.string().optional(),
+        category:z.string()
     })
 })
 const updateProductValidation = z.object({
@@ -18,9 +19,10 @@ const updateProductValidation = z.object({
         name:z.string().optional(),
         description:z.string().optional(),
         price:z.number().optional(),
-        rating:z.number().default(0).optional(),
+        rating:z.string().optional(),
         stockQuantity: z.number().default(0).optional(),
-        image: z.string().optional()
+        image: z.string().optional(),
+        category:z.string().optional()
     })
 })
 

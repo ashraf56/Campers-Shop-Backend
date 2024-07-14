@@ -3,8 +3,9 @@ export interface ProductInterface  {
     price: number
     stockQuantity: number
     description: string
-    rating: number
-    image?:string
+    rating: string
+    image?:string,
+    category:string
     
 
 }

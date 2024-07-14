@@ -47,7 +47,7 @@ const getSingleProductController = (0, CatchWrapper_1.CatchWrapper)((req, res) =
     const result = yield products_service_1.ProductServices.getSIngleProductfromDB(id);
     res.status(http_status_1.default.OK).json({
         success: true,
-        message: "Product deleted successfully",
+        message: "Single Product retrieve successfully",
         data: result
     });
 }));
